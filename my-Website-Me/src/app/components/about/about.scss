@@ -1,0 +1,115 @@
+.about-container {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+    overflow-x: hidden;
+  
+    .psp-frame {
+      position: relative;
+      width: 360px;
+      height: 200px;
+      background: #1a1a1a;
+      border-radius: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4), inset 0 0 10px #6366f1;
+      padding: 16px;
+  
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #333;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+  
+      &::before { left: -25px; }
+      &::after { right: -25px; }
+  
+      .screen {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+  
+        .hobby-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  
+    .about-text {
+      font-size: 1.2rem;
+      color: #2c2c2c;
+      max-width: 600px;
+      text-align: center;
+    }
+  
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 0;
+      width: 100%;
+      overflow-x: hidden;
+  
+      .scroll-image-wrapper {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        transform: translateY(80px) scale(0.95) rotate(2deg);
+        opacity: 0;
+        transition: all 0.9s ease;
+  
+        &[data-index]:nth-child(even) {
+          justify-content: flex-start;
+          .scroll-image {
+            transform: rotate(-3deg) scale(1);
+          }
+        }
+  
+        &[data-index]:nth-child(odd) {
+          justify-content: flex-end;
+          .scroll-image {
+            transform: rotate(3deg) scale(1);
+          }
+        }
+  
+        &.in-view {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+  
+      .scroll-image {
+        width: 280px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.6s ease;
+      }
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .psp-frame {
+      width: 280px;
+      height: 160px;
+    }
+  
+    .about-text {
+      font-size: 1rem;
+    }
+  }
+  

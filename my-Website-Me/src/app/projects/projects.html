@@ -1,0 +1,26 @@
+
+<!-- here I'll have some sort
+of cool animated list of my projects -->
+<section class="projects-section">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects-slider-container">
+        <button class="scroll-button left" (click)="scrollLeft()">‹</button>
+
+        <div class="projects-slider" #scrollContainer>
+            <div class="projects-slider-inner" [style.transform]="sliderTransform">
+              @for (repo of githubrepos; track repo.name) {
+                <a class="project-card" [href]="repo.html_url" target="_blank" rel="noopener noreferrer">
+                    <img [src]="repo.imageUrl" alt="{{ repo.name }}" />
+                    <h3>{{ repo.name }}</h3>
+                  <h4>{{ repo.description }}</h4>
+                </a>
+              }
+            </div>
+          </div>          
+
+        <button class="scroll-button right" (click)="scrollRight()">›</button>
+    </div>
+</section>
+  
+  

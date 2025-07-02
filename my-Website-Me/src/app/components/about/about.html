@@ -1,0 +1,34 @@
+<section class="about-container">
+    <!-- PSP Video Frame -->
+    <div class="psp-frame">
+      <div class="screen">
+        <video
+          src="AMV2v2.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="hobby-video"
+        ></video>
+      </div>
+    </div>
+  
+    <!-- Description -->
+    <div class="about-text">
+      <p>Hi, I'm Patrick — video editing | photography | gaming</p>
+    </div>
+  
+    <!-- Artistic Scroll-Triggered Image Gallery -->
+    <div class="image-gallery">
+      @for (img of imageList; let i = $index; track img) {
+        <div class="scroll-image-wrapper" [attr.data-index]="i">
+          <img
+            [src]="img"
+            alt="gallery image"
+            class="scroll-image"
+          />
+        </div>
+      }
+    </div>
+  </section>
+  
