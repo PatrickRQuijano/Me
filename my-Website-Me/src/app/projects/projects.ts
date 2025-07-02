@@ -18,6 +18,7 @@ export class Projects implements OnInit {
   includedRepoNames: string[] = ['Me', 'MrFocus'];
   projectImages: Record<string, string> = {
     'MrFocus': '/mrfocus.PNG',
+    'Me': '/Me.png'
     // will update and add more here...
   };  
 

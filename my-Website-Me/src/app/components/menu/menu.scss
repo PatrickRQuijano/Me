@@ -1,0 +1,89 @@
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #111;
+  }
+  
+  .parallax-hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+  }
+  
+  .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .background-layer {
+    background: url('/photos/1.JPG') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    transform: translateZ(-2px) scale(1.4);
+  }
+  
+  .midground-layer {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .floating-lens {
+    width: 200px;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+  }
+  
+  .foreground-layer {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 1.4rem;
+    }
+    .hero-text p {
+      font-size: 1rem;
+    }
+    .floating-lens {
+      width: 140px;
+    }
+  }

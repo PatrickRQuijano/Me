@@ -1,1 +1,26 @@
-<p>contact works!</p>
+<section class="contact-section Contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>Have questions or want to collaborate? Send me a message!</p>
+  
+      <form (submit)="onSubmit($event)" novalidate>
+        <div class="form-group">
+          <input type="text" id="name" name="name" required autocomplete="off" />
+          <label for="name">Name</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="email" id="email" name="email" required autocomplete="off" />
+          <label for="email">Email</label>
+        </div>
+  
+        <div class="form-group">
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Message</label>
+        </div>
+  
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+  
